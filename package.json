@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "docker-integration-test": "bin/docker-integration-test"
+  },
   "scripts": {
     "test": "jest --coverage",
     "login": "NPM_REGISTRY=http://localhost:4873 NPM_USER=testUser NPM_PASS=testPass NPM_EMAIL=test@example.com npm-cli-login"
