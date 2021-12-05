@@ -24,8 +24,11 @@ jobs:
       run: npm run login
     - name: Publishing
       run: npm publish --registry http://localhost:4873
-    - name: install cli
+    - name: install global cli
       run: npm i -g install docker-integration-test --registry http://localhost:4873 
     - name: run cli
-      run: super-cli
+      run: echo '::set-output name=CLI::$(super-cli)'
+      id: cli-output
+    - name: validate
+      if: ${{ steps.cli-output.CLI == 'foo' }} 
    
