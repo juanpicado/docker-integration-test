@@ -12,8 +12,8 @@ jobs:
           - 4873:4873
     steps:
     - uses: actions/checkout@v2.4.0
-    - name: Use Node 14
-      uses: actions/setup-node@v1
+    - name: Use Node
+      uses: actions/setup-node@v2
       with:
-        node-version: 14 
+        node-version: 116 
    
