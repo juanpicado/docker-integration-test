@@ -1,10 +1,14 @@
 {
   "name": "docker-integration-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "docker test cli",
   "main": "index.js",
+  "bin": {
+    "super-cli": "bin/super-cli"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage",
+    "login": "NPM_REGISTRY=http://localhost:4873 NPM_USER=testUser NPM_PASS=testPass NPM_EMAIL=test@example.com npm-cli-login"
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/juanpicado/docker-integration-test/issues"
   },
-  "homepage": "https://github.com/juanpicado/docker-integration-test#readme"
+  "homepage": "https://github.com/juanpicado/docker-integration-test#readme",
+  "devDependencies": {
+    "jest": "^27.4.3",
+    "npm-cli-login": "^1.0.0"
+  }
 }
