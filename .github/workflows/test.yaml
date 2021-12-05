@@ -20,6 +20,8 @@ jobs:
       run: npm install --registry http://localhost:4873 --loglevel verbose
     - name: Test
       run: npm test
+    - name: credentials
+      run: NPM_USER=testUser NPM_PASS=testPass NPM_EMAIL=test@example.com npm-cli-login
     - name: Publishing
       run: npm publish --registry http://localhost:4873
 
