@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/juanpicado/docker-integration-test/issues"
   },
-  "homepage": "https://github.com/juanpicado/docker-integration-test#readme"
+  "homepage": "https://github.com/juanpicado/docker-integration-test#readme",
+  "devDependencies": {
+    "jest": "^27.4.3"
+  }
 }
