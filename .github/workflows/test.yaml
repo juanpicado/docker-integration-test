@@ -4,14 +4,12 @@ on: ['pull_request']
 jobs:  
   prepare:
     runs-on: ubuntu-latest
-    outputs:
-      super-cli: ${{ steps.set-crashers-count.outputs.super-cli }}  
     name: ci
     services:
       verdaccio:
-        image: verdaccio/verdaccio:5
-        ports:
-          - 4873:4873
+          image: verdaccio/verdaccio:5
+          ports: 
+            - 4873:4873 
     steps:
     - uses: actions/checkout@v2.4.0
     - name: Use Node
@@ -35,5 +33,5 @@ jobs:
       run: echo "$CLI_OUTPUT"
     - name: validate
       if: env.CLI_OUTPUT != 'here this is my CLI'
-      run: exit 1      
-  
+      run: exit 1         
+
