@@ -24,9 +24,8 @@ jobs:
       run: npm run login
     - name: Publishing
       run: npm publish --registry http://localhost:4873
-    - name: temp folder
-      run: mkdir /tmp/cli
     - name: install cli
-      run: npm install docker-integration-test --registry http://localhost:4873 --prefix /tmp/cli    
-
+      run: npm i -g install docker-integration-test --registry http://localhost:4873 
+    - name: run cli
+      run: docker-integration-test   
    
