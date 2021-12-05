@@ -1,10 +1,10 @@
 {
   "name": "docker-integration-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "docker test cli",
   "main": "index.js",
   "bin": {
-    "docker-integration-test": "bin/docker-integration-test"
+    "super-cli": "bin/super-cli"
   },
   "scripts": {
     "test": "jest --coverage",

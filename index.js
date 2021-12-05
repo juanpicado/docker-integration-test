@@ -1,1 +1,3 @@
-console.log('here this is my CLI');
+module.exports = () => {
+  console.log('here this is my CLI');
+}

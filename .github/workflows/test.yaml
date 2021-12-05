@@ -27,5 +27,5 @@ jobs:
     - name: install cli
       run: npm i -g install docker-integration-test --registry http://localhost:4873 
     - name: run cli
-      run: docker-integration-test   
+      run: super-cli
    
