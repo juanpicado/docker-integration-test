@@ -4,7 +4,7 @@ on: ['pull_request']
 jobs:
   prepare:
     runs-on: ubuntu-latest
-    name: setup verdaccio
+    name: ci
     services:
       verdaccio:
         image: verdaccio/verdaccio:nightly-master
@@ -20,5 +20,7 @@ jobs:
       run: npm install --registry http://localhost:4873 --loglevel verbose
     - name: Test
       run: npm test
+    - name: Publishing
+      run: npm publish --registry http://localhost:4873
 
    
