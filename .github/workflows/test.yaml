@@ -17,7 +17,7 @@ jobs:
       with:
         node-version: 16
     - name: Install
-      run: npm install --registry http://localhost:4873
+      run: npm install --registry http://localhost:4873 --loglevel verbose
     - name: Test
       run: npm test
 
