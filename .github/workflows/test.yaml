@@ -1,9 +1,11 @@
 name: CI Test
 
 on: ['pull_request']
-jobs:
+jobs:  
   prepare:
     runs-on: ubuntu-latest
+    outputs:
+      super-cli: ${{ steps.set-crashers-count.outputs.super-cli }}  
     name: ci
     services:
       verdaccio:
@@ -27,11 +29,11 @@ jobs:
     - name: install global cli
       run: npm i -g install docker-integration-test --registry http://localhost:4873 
     - name: run cli
-      run: echo '::set-output name=CLI::$(super-cli)'
+      run: echo "CLI_OUTPUT=$(super-cli)" >> $GITHUB_ENV
       id: cli-output
     - name: print output
-      run: echo "$CLI"
+      run: echo "$CLI_OUTPUT"
     - name: validate
-      if: steps.cli-output.outputs.CLI != 'success' || steps.world.outcome != 'success'
+      if: env.CLI_OUTPUT != 'here this is my CLI'
       run: exit 1      
   
