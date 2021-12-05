@@ -29,6 +29,9 @@ jobs:
     - name: run cli
       run: echo '::set-output name=CLI::$(super-cli)'
       id: cli-output
+    - name: print output
+      run: echo "$CLI"
     - name: validate
-      run: ${{ steps.cli-output.outputs.CLI == 'here this is my CLI' }} 
-   
+      if: steps.cli-output.outputs.CLI != 'success' || steps.world.outcome != 'success'
+      run: exit 1      
+  
