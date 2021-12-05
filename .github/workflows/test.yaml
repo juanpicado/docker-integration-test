@@ -7,7 +7,7 @@ jobs:
     name: ci
     services:
       verdaccio:
-        image: verdaccio/verdaccio:nightly-master
+        image: verdaccio/verdaccio:5
         ports:
           - 4873:4873
     steps:
@@ -24,5 +24,9 @@ jobs:
       run: npm run login
     - name: Publishing
       run: npm publish --registry http://localhost:4873
+    - name: temp folder
+      run: mkdir /tmp/cli
+    - name: install cli
+      run: npm install docker-integration-test --registry http://localhost:4873 --prefix /tmp/cli    
 
    
