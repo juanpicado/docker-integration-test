@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "login": "NPM_USER=testUser NPM_PASS=testPass NPM_EMAIL=test@example.com npm-cli-login"
   },
   "repository": {
     "type": "git",
